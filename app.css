@@ -138,3 +138,54 @@ td .tier{margin:0;font-size:11px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 
 .gap8{margin-top:8px}.gap6{margin-top:6px}.w130{width:130px}
+
+/* ---- v2: start/end, per-set rows, RPE, summary charts ---- */
+.btn.go{background:var(--good);color:#0d1a12;display:flex;align-items:center;justify-content:center;gap:10px;font-size:20px;padding:16px}
+.btn.light{background:var(--ink);color:var(--bg)}
+.btn:disabled{opacity:.4;cursor:default}
+.hint.tight{margin-top:-8px}
+.hint.warn{color:var(--t1)}
+.runbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:15;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.runbar .dot{width:10px;height:10px;border-radius:50%;background:var(--good);flex:none;animation:pulse 2s infinite}
+.runbar .rt{flex:1;min-width:0}
+.runbar .rl{font-size:12px;color:var(--muted)}
+.runbar .rc{font-family:var(--display);font-weight:700;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+@keyframes pulse{50%{opacity:.35}}
+.tgt{text-align:right;flex:none}
+.tgt .tl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sgrid{display:grid;grid-template-columns:30px minmax(0,1fr) 54px 54px 44px;gap:6px;align-items:center}
+.sgrid.sh{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 4px}
+.srow{padding:4px;border-radius:10px}
+.srow.now{background:var(--sunk)}
+.sn{font-family:var(--display);font-weight:700;font-size:18px;color:var(--muted);display:flex;flex-direction:column;line-height:1}
+.sn small{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.swb{position:relative;min-width:0}
+.swb input,.srep{width:100%;height:42px;box-sizing:border-box;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 20px var(--display);font-variant-numeric:tabular-nums;padding:0 8px}
+.swb input{padding-right:34px}
+.srep{text-align:center;padding:0 4px}
+.df{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--t3);pointer-events:none}
+.srow.done .swb input,.srow.done .srep{color:var(--muted)}
+.rpeb{height:42px;border-radius:8px;border:1px dashed var(--line);background:transparent;color:var(--muted);font:600 13px var(--body);cursor:pointer;padding:0}
+.rpeb.on{border-style:solid;background:var(--sunk);color:var(--ink);font:700 18px var(--display)}
+.chk{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:transparent;color:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
+.chk.on{background:var(--good);border-color:var(--good);color:#0d1a12}
+.sheetcard{gap:14px;border-radius:18px 18px 12px 12px}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line);align-self:center}
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.chip{height:54px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:700 24px var(--display);cursor:pointer}
+.chip.on{background:var(--t2);border-color:var(--t2);color:#fff}
+.rpedesc{background:var(--sunk);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;font-size:14px}
+.rpedesc b{font-family:var(--display);font-size:20px}
+.linkbtn{background:none;border:0;color:var(--muted);font:600 14px var(--body);padding:6px;align-self:center;cursor:pointer}
+.linkbtn.danger{color:var(--t1)}
+.confirm{background:var(--sunk);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tile{background:var(--sunk);border-radius:10px;padding:10px;display:flex;flex-direction:column;min-width:0}
+.tile span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tile b{font-family:var(--display);font-size:24px;font-variant-numeric:tabular-nums}
+.tile small{font-size:12px;color:var(--muted)}
+.sheet{overflow-y:auto}
+.chart figcaption b small{font-size:13px;color:var(--muted);font-family:var(--body);font-weight:500}
+.vbar{opacity:.55}.vbar.hi{opacity:1}
+.vbar.c2{fill:var(--t2)}.vbar.good{fill:var(--good);opacity:1}
+.vbar.cur{fill:none;stroke:var(--good);stroke-width:2;stroke-dasharray:4 3}
